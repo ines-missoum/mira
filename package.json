@@ -1,0 +1,10 @@
+{
+  "name": "mira",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.19.0",
+    "i18next": "^17.3.0"
+  }
+}
