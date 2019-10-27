@@ -10,7 +10,9 @@ const PopularRequestHandler = {
     },
     handle(handlerInput) {
 
-      return  v3Client.movie.popular(page = 1)
+
+
+        return v3Client.movie.popular({"page":1})
             .then((data) => {
                 let tab = data.results;
                 let five = tab.slice(0, 4);

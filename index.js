@@ -7,6 +7,7 @@ const FallbackHandler = require('./handlers/fallbackHandler');
 const HelpRequestHandler = require('./handlers/helpRequestHandler');
 const SessionEndedRequestHandler = require('./handlers/sessionEndedRequestHandler');
 const PopularRequestHandler = require('./handlers/PopularRequestHandler');
+const DirectorRequestHandler = require('./handlers/directorRequestHandler');
 
 
 
@@ -17,6 +18,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         FallbackHandler,
         HelpRequestHandler,
         PopularRequestHandler,
+        DirectorRequestHandler,
         SessionEndedRequestHandler
     )
     .lambda();
