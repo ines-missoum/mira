@@ -1,6 +1,6 @@
 .idea
 *.zip
 node_modules
-
+.env
 
 /get-pip.py

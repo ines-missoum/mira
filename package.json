@@ -1,7 +1,10 @@
 {
   "name": "mira",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "@leonardocabeza/the-movie-db": "^3.0.6",
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "ask-sdk-core": "^2.7.0",
     "ask-sdk-model": "^1.22.0"
