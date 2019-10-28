@@ -8,6 +8,7 @@ const HelpRequestHandler = require('./handlers/helpRequestHandler');
 const SessionEndedRequestHandler = require('./handlers/sessionEndedRequestHandler');
 const PopularRequestHandler = require('./handlers/PopularRequestHandler');
 const DirectorRequestHandler = require('./handlers/directorRequestHandler');
+const BestMovieOfYearRequestHandler = require('./handlers/bestMovieOfYearRequestHandler');
 
 
 
@@ -19,6 +20,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpRequestHandler,
         PopularRequestHandler,
         DirectorRequestHandler,
-        SessionEndedRequestHandler
+        SessionEndedRequestHandler,
+        BestMovieOfYearRequestHandler
     )
     .lambda();
