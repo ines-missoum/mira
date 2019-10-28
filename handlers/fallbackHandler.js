@@ -9,7 +9,7 @@ const FallbackHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.FallbackIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'FALLBACK_MSG';
+        const speakOutput = "I don’t know the answer to that question.";
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
