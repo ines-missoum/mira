@@ -19,7 +19,9 @@ const PopularRequestHandler = {
                 let a = five.map(film => film.title);
                 let movies = a.join(", ") + " and " + tab[5].title;
 
-                let speakOutput = "Here are the popular movies of the moment: " + movies;
+                let test = movies.replace(/&/g, "and");
+
+                let speakOutput = "Here are the popular movies of the moment: " + test;
                 return handlerInput.responseBuilder
                     .speak(speakOutput)
                     .reprompt(speakOutput)
