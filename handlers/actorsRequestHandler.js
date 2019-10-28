@@ -31,7 +31,7 @@ const ActorsRequestHandler = {
             })
             .catch(() => {
                 let speakOutput = "I don't know this movie.";
-                handlerInput.responseBuilder
+                return handlerInput.responseBuilder
                     .speak(speakOutput)
                     .reprompt(speakOutput)
                     .getResponse();
