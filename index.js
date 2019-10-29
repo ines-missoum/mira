@@ -11,6 +11,7 @@ const DirectorRequestHandler = require('./handlers/directorRequestHandler');
 const BestMovieOfYearRequestHandler = require('./handlers/bestMovieOfYearRequestHandler');
 const ExistDuoRequestHandler = require('./handlers/existDuoRequestHandler');
 const ActorsRequestHandler = require('./handlers/actorsRequestHandler');
+const ReleaseDateRequestHandler = require('./handlers/releaseDateRequestHandler');
 
 
 exports.handler = Alexa.SkillBuilders.custom()
@@ -24,6 +25,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         SessionEndedRequestHandler,
         BestMovieOfYearRequestHandler,
         ExistDuoRequestHandler,
-        ActorsRequestHandler
+        ActorsRequestHandler,
+        ReleaseDateRequestHandler
     )
     .lambda();
