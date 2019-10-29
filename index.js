@@ -13,6 +13,7 @@ const ExistDuoRequestHandler = require('./handlers/existDuoRequestHandler');
 const ActorsRequestHandler = require('./handlers/actorsRequestHandler');
 const ReleaseDateRequestHandler = require('./handlers/releaseDateRequestHandler');
 const SimilarMovieRequestHandler = require('./handlers/similarMovieRequestHandler');
+const MoviesOfGenreRequestHandler = require('./handlers/moviesOfGenreRequestHandler');
 
 
 exports.handler = Alexa.SkillBuilders.custom()
@@ -28,6 +29,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         ExistDuoRequestHandler,
         ActorsRequestHandler,
         ReleaseDateRequestHandler,
-        SimilarMovieRequestHandler
+        SimilarMovieRequestHandler,
+        MoviesOfGenreRequestHandler
     )
     .lambda();
