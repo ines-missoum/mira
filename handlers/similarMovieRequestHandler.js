@@ -9,6 +9,7 @@ const SimilarMovieRequestHandler = {
     },
 
     handle(handlerInput) {
+
         let movie = handlerInput.requestEnvelope.request.intent.slots.nameMovie.value;
 
         return v3Client.search.movies({query: movie})
@@ -24,17 +25,26 @@ const SimilarMovieRequestHandler = {
                 let responds;
                 if (results.length === 0) {
                     responds = [
-                        "I'm sorry, I don't have a similar movie to " + nameMovie,
-                        "Sorry, I haven't found a movie similar to " + nameMovie,
-                        "Ow, I don't know a movie similar to " + nameMovie
+                        "Sorry, I don't have a similar movie to " + movie,
+                        "Hmmm, I haven't found a movie similar to " + movie,
+                        "Oww sorry, I don't know a movie similar to " + movie
                     ]
-                } else {
-                    let similar1 = results[0].original_title;
+
+                } else if (results.length > 10) {
+
+                    let randoms = getRandoms();
+                    let similar1 = results[randoms[0]].original_title;
+                    let similar2 = results[randoms[1]].original_title;
+                    let similar3 = results[randoms[2]].original_title;
 
                     responds = [
-                        similar1 + " is similar to the movie " + nameMovie,
-                        similar1 + " is like the movie " + nameMovie,
+                        "Here are some movies similar to " + movie + ": " + similar1 + ", " + similar2 + ", and " + similar3 + ".",
+                        "Hmmm, the movies " + similar1 + ", " + similar2 + ", and " + similar3 + " are similar to " + movie,
                     ]
+
+                } else {
+                    let similar1 = results[0].original_title;
+                    responds = [similar1 + " is similar to the movie " + movie]
                 }
 
                 let speakOutput = responds[Math.floor(Math.random() * responds.length)];
@@ -54,5 +64,20 @@ const SimilarMovieRequestHandler = {
             })
     }
 };
+
+/**
+ * @return [] array of 3 distinct random numbers between 0 and 9
+ */
+function getRandoms() {
+    let a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let n;
+    let r = [];
+    for (n = 1; n <= 3; ++n) {
+        let i = Math.floor((Math.random() * (9 - n)) + 1);
+        r.push(a[i]);
+        a[i] = a[9 - n];
+    }
+    return r
+}
 
 module.exports = SimilarMovieRequestHandler;
