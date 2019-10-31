@@ -15,13 +15,14 @@ const PopularRequestHandler = {
         return v3Client.movie.popular({"page":1})
             .then((data) => {
                 let tab = data.results;
-                let five = tab.slice(0, 4);
+                let five = tab.slice(0, 2);
                 let a = five.map(film => film.title);
-                let movies = a.join(", ") + " and " + tab[5].title;
+                let movies = a.join(", ") + ", or " + tab[2].title;
 
                 let test = movies.replace(/&/g, "and");
+                let clean = test.replace(/:/g, "");
 
-                let speakOutput = "Here are the popular movies of the moment: " + test;
+                let speakOutput = "Well, you might like to see: " + clean + ", these are the popular movies of the moment";
                 return handlerInput.responseBuilder
                     .speak(speakOutput)
                     .reprompt(speakOutput)

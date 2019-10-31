@@ -23,7 +23,7 @@ const DirectorRequestHandler = {
                 let crew = credits.crew;
                 let directorName = crew.filter(person => person.job === 'Director')[0].name;
 
-                let speakOutput = "The director of this movie is: " + directorName;
+                let speakOutput = "The director of this movie is " + directorName;
                 return handlerInput.responseBuilder
                     .speak(speakOutput)
                     .reprompt(speakOutput)
