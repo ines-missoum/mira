@@ -1,0 +1,136 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my mira",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PopularIntent",
+                    "slots": [],
+                    "samples": [
+                        "What movie could I go to see at the cinema",
+                        "popular",
+                        "What are the popular movies these last days"
+                    ]
+                },
+                {
+                    "name": "DirectorIntent",
+                    "slots": [
+                        {
+                            "name": "nameMovie",
+                            "type": "AMAZON.Movie"
+                        }
+                    ],
+                    "samples": [
+                        "Who is the director of {nameMovie}"
+                    ]
+                },
+                {
+                    "name": "BestMovieOfYearIntent",
+                    "slots": [
+                        {
+                            "name": "movieYear",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "tell me what was the best rated movie in {movieYear}",
+                        "what is the best movie of {movieYear}"
+                    ]
+                },
+                {
+                    "name": "ExistDuoIntent",
+                    "slots": [
+                        {
+                            "name": "firstActor",
+                            "type": "AMAZON.Actor"
+                        },
+                        {
+                            "name": "secondActor",
+                            "type": "AMAZON.Actor"
+                        }
+                    ],
+                    "samples": [
+                        "Have {firstActor} and {secondActor} ever been in a movie together "
+                    ]
+                },
+                {
+                    "name": "ActorsIntent",
+                    "slots": [
+                        {
+                            "name": "nameMovie",
+                            "type": "AMAZON.Movie"
+                        }
+                    ],
+                    "samples": [
+                        "What are the actors of {nameMovie}"
+                    ]
+                },
+                {
+                    "name": "ReleaseDateIntent",
+                    "slots": [
+                        {
+                            "name": "nameMovie",
+                            "type": "AMAZON.Movie"
+                        }
+                    ],
+                    "samples": [
+                        "{nameMovie} was released in which year",
+                        "when was released the movie {nameMovie}",
+                        "When was released {nameMovie}",
+                        "What is the release date of {nameMovie}"
+                    ]
+                },
+                {
+                    "name": "SimilarMovieIntent",
+                    "slots": [
+                        {
+                            "name": "nameMovie",
+                            "type": "AMAZON.Movie"
+                        }
+                    ],
+                    "samples": [
+                        "do you know movies similar to {nameMovie}",
+                        "tell me some movies like {nameMovie}",
+                        "give me movies like {nameMovie}",
+                        "give me a movie like {nameMovie}",
+                        "i want a similar movie to {nameMovie}",
+                        "give me a movie similar to {nameMovie}"
+                    ]
+                },
+                {
+                    "name": "MovieOfGenreIntent",
+                    "slots": [
+                        {
+                            "name": "genreMovie",
+                            "type": "AMAZON.Genre"
+                        }
+                    ],
+                    "samples": [
+                        "Give me some {genreMovie} movies"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
